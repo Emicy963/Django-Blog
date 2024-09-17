@@ -1,0 +1,17 @@
+# Arquivos de Python
+*.pyc
+__pycache__/
+
+# Ambiente Virtual
+venv/
+
+# Configurações do Sistema
+*.sqlite3
+*.log
+*.env
+
+# Arquivos de Mídia
+media/
+
+# Arquivos de migração
+migrations/

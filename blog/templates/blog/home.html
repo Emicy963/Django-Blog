@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>All Posts</h1>
+{% for post in posts %}
+  <div class="post">
+    <h3><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h3>
+    <p>{{ post.content|slice:":100" }}...</p>
+    <p>By {{ post.author }} on {{ post.created_ate }}</p>
+    <hr>
+  </div>
+{% endfor %}
+<a href="{% url 'create_post' %}">New Post</a>
+</body>
+</html>
