@@ -3,7 +3,7 @@
 __pycache__/
 
 # Ambiente Virtual
-venv/
+.venv/
 
 # Configurações do Sistema
 *.sqlite3
