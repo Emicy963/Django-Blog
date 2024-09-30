@@ -4,14 +4,22 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <title>Login</title>
+       {% load static %}
+       <link rel='stylesheet' href="{% static "blog/styles.css" %}">
    </head>
    <body>
-       <h2>Login</h2>
-       <form method="post">
-           {% csrf_token %}
-           {{ form.as_p }}
-           <button type="submit">Login</button>
-       </form>
+        <main>
+            <section class="login-container">
+                <head>
+                    <h2>Login</h2>
+                </head>
+                <form method="post" class="login-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn-login">Login</button>
+                </form>
+            </section>
+        </main>
    </body>
    </html>
    
