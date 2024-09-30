@@ -1,18 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Cor de fundo suave */
+            color: #333; /* Cor do texto */
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px; /* Largura máxima do contêiner */
+            margin: 0 auto; /* Centraliza o contêiner */
+            padding: 20px;
+            background: #fff; /* Fundo branco para o contêiner */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+        }
+
+        h1 {
+            color: #333; /* Cor do título */
+            text-align: center; /* Centraliza o título */
+        }
+
+        .post {
+            margin-bottom: 20px; /* Espaço entre os posts */
+            padding: 15px;
+            border: 1px solid #ddd; /* Borda leve ao redor de cada post */
+            border-radius: 4px; /* Bordas arredondadas */
+            background: #f9f9f9; /* Fundo levemente cinza */
+        }
+
+        .post h3 {
+            margin: 0; /* Remove margem padrão do h3 */
+        }
+
+        .post-meta {
+            font-size: 0.9em; /* Tamanho de fonte menor para a meta */
+            color: #777; /* Cor mais suave para texto da meta */
+        }
+
+        .new-post-button {
+            display: inline-block; /* Exibe como botão */
+            padding: 10px 15px; /* Preenchimento interno */
+            margin-top: 20px; /* Margem acima do botão */
+            color: #fff; /* Cor do texto do botão */
+            background: #007BFF; /* Cor de fundo do botão */
+            border: none; /* Remove borda padrão */
+            border-radius: 5px; /* Bordas arredondadas */
+            text-decoration: none; /* Remove sublinhado */
+            font-weight: bold; /* Texto em negrito */
+        }
+
+        .new-post-button:hover {
+            background: #0056b3; /* Cor de fundo ao passar o mouse */
+        }
+    </style>
 </head>
 <body>
-<h1>All Posts</h1>
-{% for post in posts %}
-  <div class="post">
-    <h3><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h3>
-    <p>{{ post.content|slice:":100" }}...</p>
-    <p>By {{ post.author }} on {{ post.created_ate }}</p>
-    <hr>
-  </div>
-{% endfor %}
-<a href="{% url 'create_post' %}">New Post</a>
+    <div class="container">
+        <h1>All Posts</h1>
+        {% for post in posts %}
+            <article class="post">
+                <h3><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h3>
+                <p>{{ post.content|slice:":100" }}...</p>
+                <p class="post-meta">By {{ post.author }} on {{ post.created_at }}</p> <!-- Corrigi 'created_ate' para 'created_at' -->
+                <hr>
+            </article>
+        {% empty %}
+            <p>No posts available.</p> <!-- Mensagem caso não haja posts -->
+        {% endfor %}
+        <a href="{% url 'create_post' %}" class="new-post-button">New Post</a> <!-- Estilizar o botão -->
+    </div>
 </body>
 </html>
