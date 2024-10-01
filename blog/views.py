@@ -34,7 +34,7 @@ def delete_post(request, id):
     
     if request.method == 'POST':
         post.delete()
-        messages.sucess(request, 'Your post has been delete!')
+        messages.success(request, 'Your post has been delete!')
         return redirect('home_page')
     
     return render(request, 'blog/delete_post.html', {'post': post})
