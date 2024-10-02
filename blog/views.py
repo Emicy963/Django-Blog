@@ -49,13 +49,13 @@ def edit_post(request, id):
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
-            form.save
+            form.save()
             return redirect('post_detail', id=id)
     
     else:
         form = PostForm(instance=post)
 
-    return (request, 'blog/edit_post.html', {'form': form, 'post': post})
+    return render(request, 'blog/edit_post.html', {'form': form, 'post': post})
 
 def post_list(request):
     posts = Post.objects.all()
