@@ -103,7 +103,7 @@ Weelcome contributions to improve this Django blog project! Here's how you can c
 5. Push to the branch (`git push origin feature/AmazingFeature`)
 6. Open a Pull Request
 
-Please make sure to update tests as appropriate and adhere to the project's coding standards.
+Please make sure to update tests as appropriate and here to the project's coding standards.
 
 ### Reporting Issues
 
@@ -116,7 +116,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) [2024] [Anderson Cafurica]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
