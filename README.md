@@ -24,7 +24,7 @@ This project is a **blog application** developed using the Django framework. The
 
 ## Installation and Setup
 
-### Prerequisites
+### Pre-requisites
 Before running this project, ensure you have the following installed:
 
 - Python 3.x
@@ -36,7 +36,7 @@ Before running this project, ensure you have the following installed:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/django-blog.git
+    git clone https://github.com/emicy963/django-blog.git
     cd django-blog
     ```
 
@@ -83,6 +83,7 @@ DEBUG=False
 ALLOWED_HOSTS=your_domain_or_ip
 DATABASE_URL=postgres://username:password@localhost:5432/your_db_name
 
+```
 ## Usage
 
 [Provide brief instructions on how to use the blog, e.g.:]
@@ -93,7 +94,7 @@ DATABASE_URL=postgres://username:password@localhost:5432/your_db_name
 
 ## Contributing
 
-We elcome contributions to improve this Django blog project! Here's how you can contribute:
+Weelcome contributions to improve this Django blog project! Here's how you can contribute:
 
 1. Fork the repository
 2. Create a new branch (`git checkout -b feature/AmazingFeature`)
@@ -112,7 +113,7 @@ If you find a bug or have a suggestion for improvement, please open an issue on 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-```
+
 MIT License
 
 Copyright (c) [year] [fullname]
