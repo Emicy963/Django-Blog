@@ -4,18 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ post.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .post-meta p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        .edit-link {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .delete-link {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .back-list {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #6c757d;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ post.title }}</h1>
-    <p><strong>Author:</strong> {{ post.author }}</p>
-    <p><strong>Published:</strong> {{ post.created_at }}</p>
-    <p>{{ post.content }}</p>
-    {% if user == post.author %}
-        <a href="{% url 'post_edit' post.id %}">Edit</a>
-        <a href="{% url 'delete_post' post.id %}">Delete</a>
-    {% endif %}
-    
-    <a href="{% url 'post_list' %}">Back to list</a>
-    <p><a href="{% url 'home_page' %}">Back Home</a></p>
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <div class="post-meta">
+            <p><strong>Author:</strong> {{ post.author }}</p>
+            <p><strong>Published:</strong> {{ post.created_at }}</p>
+        </div>
+        <p>{{ post.content }}</p>
+
+        {% if user == post.author %}
+        <div class="actions">
+            <a href="{% url 'post_edit' post.id %}" class="edit-link">Edit</a>
+            <a href="{% url 'delete_post' post.id %}" class="delete-link">Delete</a>
+        </div>
+        {% endif %}
+
+        <a href="{% url 'post_list' %}" class="back-list">Back to list</a>
+        <p><a href="{% url 'home_page' %}" class="back-home">Back Home</a></p>
+    </div>
 </body>
 </html>
