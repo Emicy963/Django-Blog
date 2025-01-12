@@ -9,6 +9,7 @@ __pycache__/
 *.sqlite3
 *.log
 *.env
+*.hintrc
 
 # Arquivos de Mídia
 media/
